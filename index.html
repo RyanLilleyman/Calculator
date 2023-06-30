@@ -978,7 +978,21 @@
             </a>
         </footer> 
     </div>
-    
+    <script>
+        setTimeout(function(){
+        document.querySelector('.calculatorFade').style.display = 'none';
+            }, 0
+        );
+        setTimeout(function(){
+            document.getElementById('preloader').classList.add('fadeOut');
+        }, 2500);
+
+        setTimeout(function(){
+            document.getElementById('preloader').style.display = 'none';
+            document.querySelector('.calculatorFade').style.display = 'block';
+            document.querySelector('.calculatorFade').classList.add('fadeIn');
+        }, 3000);
+    </script>
     <script type="module" src="main.mjs"></script>
 </body>
 </html>

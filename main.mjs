@@ -6,20 +6,7 @@ import * as CALLBACKS from "./scripts/callbacks.mjs";
 // import * as GRIDPARSER from "./scripts/gridParser.mjs"
 
 
-setTimeout(
-    function(){
-        document.querySelector('.calculatorFade').style.display = 'none';
-    }, 0
-);
-setTimeout(function(){
-    document.getElementById('preloader').classList.add('fadeOut');
-}, 2500);
 
-setTimeout(function(){
-    document.getElementById('preloader').style.display = 'none';
-    document.querySelector('.calculatorFade').style.display = 'block';
-    document.querySelector('.calculatorFade').classList.add('fadeIn');
-}, 3000);
 
 onClick(CONSTANTS.WON, CALLBACKS.onClicked);
 onClick(CONSTANTS.WOFF, CALLBACKS.offClicked)
