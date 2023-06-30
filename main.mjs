@@ -1,7 +1,7 @@
 
-import { onClick } from "./scripts/eventListeners.mjs";
-import * as CONSTANTS from "./scripts/constants.mjs";
-import * as CALLBACKS from "./scripts/callbacks.mjs";
+import { onClick } from "./dist/scripts/eventListeners.mjs";
+import * as CONSTANTS from "./dist/scripts/constants.mjs";
+import * as CALLBACKS from "./dist/scripts/callbacks.mjs";
 // import * as UTILITIES from "./scripts/UtilityFunctions.mjs";
 // import * as GRIDPARSER from "./scripts/gridParser.mjs"
 
