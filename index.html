@@ -985,14 +985,16 @@
         );
         setTimeout(function(){
             document.getElementById('preloader').classList.add('fadeOut');
-        }, 2500);
+        }, 2000);
 
         setTimeout(function(){
             document.getElementById('preloader').style.display = 'none';
             document.querySelector('.calculatorFade').style.display = 'block';
             document.querySelector('.calculatorFade').classList.add('fadeIn');
-        }, 3000);
+        }, 2500);
     </script>
-    <script type="module" src="main.mjs"></script>
+    <script src="./dist/42.bundle.js"></script>
+    <script src="./dist/978.bundle.js"></script>
+    <script src="./dist/bundle.js"></script>
 </body>
 </html>
