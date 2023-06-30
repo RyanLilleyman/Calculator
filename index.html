@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/loading.css">
+    <link rel="stylesheet" href="./styles/structureStyle.css">
+    <title>PlusMinus</title>
+</head>
+<body>
+    <div id="preloader" class="center">
+        <div class="loader">
+            <div class="element"></div>
+            <div class="element"></div>
+            <div class="element"></div>
+            <div class="element"></div>
+        </div>
+    </div>
+    <div class="calculatorFade">
+        <main class="calculator">
+            <section class="no-button">
+                <div class="screen">
+                    <div class="topScreen">
+                        <span class="screenOff lcdLeft">
+                            <svg class="screenOff" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 50 50">
+                                <polygon points="20,10 0,25 20,40 20,30 50,30 50,20 20,20"/>
+                            </svg>
+                        </span>
+                        <span class="lcdGrid">
+                            <div class="lcdGridSquare becomeGridContainer" id="gridspace01">
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                            </div>
+                            <div class="lcdGridSquare becomeGridContainer" id="gridspace02">
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                            </div>
+                            <div class="lcdGridSquare becomeGridContainer" id="gridspace03">
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                            </div>
+                            <div class="lcdGridSquare becomeGridContainer" id="gridspace04">
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                            </div>
+                            <div class="lcdGridSquare becomeGridContainer" id="gridspace05">
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                            </div>
+                            <div class="lcdGridSquare becomeGridContainer" id="gridspace06">
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                            </div>
+                            <div class="lcdGridSquare becomeGridContainer" id="gridspace07">
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                            </div>
+                            <div class="lcdGridSquare becomeGridContainer" id="gridspace08">
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                            </div>
+                            <div class="lcdGridSquare becomeGridContainer" id="gridspace09">
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                            </div>
+                            <div class="lcdGridSquare becomeGridContainer" id="gridspace10">
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                            </div>
+                            <div class="lcdGridSquare becomeGridContainer" id="gridspace11">
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                                <div class="screenOff"></div>
+                            </div>
+                        </span>
+                        <span class="lcdRight">
+                            <svg class="screenOff" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 50 50">
+                                <polygon points="30,10 50,25 30,40 30,30 0,30 0,20 30,20"/>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="middleScreen">
+                        <span class="negative">
+                            <svg class="screenOff" xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 50 10">
+                                <line x1="0" y1="5" x2="50" y2="5" stroke-width="2"/>
+                            </svg>
+                        </span>
+                    
+                        <div class="lcdGridSquare becomeGridContainer" id="gridspace12">
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                        </div>
+                    
+                        <div class="lcdGridSquare becomeGridContainer" id="gridspace13">
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                        </div>
+                    
+                        <div class="lcdGridSquare becomeGridContainer" id="gridspace14">
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                        </div>
+                    
+                        <div class="lcdGridSquare becomeGridContainer" id="gridspace15">
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                        </div>
+                    
+                        <div class="lcdGridSquare becomeGridContainer" id="gridspace16">
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                        </div>
+                    
+                        <div class="lcdGridSquare becomeGridContainer" id="gridspace17">
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                        </div>
+                    
+                        <div class="lcdGridSquare becomeGridContainer" id="gridspace18">
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                        </div>
+                    
+                        <div class="lcdGridSquare becomeGridContainer" id="gridspace19">
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                        </div>
+                    
+                        <div class="lcdGridSquare becomeGridContainer" id="gridspace20">
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                        </div>
+                    
+
+                        <div class="lcdGridSquare becomeGridContainer" id="gridspace21">
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                        </div>
+                        <div class="lcdGridSquare becomeGridContainer" id="gridspace22">
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                            <div class="screenOff"></div>
+                        </div>
+                    
+    
+                    </div>
+                    <div class="bottomScreen">
+                        <span class="screenOff" id="secondScreenText">2nd</span>
+                        <span class="rightSideBottomScreen">
+                            <span class="screenOff" id="degreeScreenText" >DEG</span>
+                            <span class="screenOff" id="forwardSlash">/</span>
+                            <span class="screenOff" id="radianScreenText">RAD</span>
+                        </span>
+                        
+                    </div>
+                </div>
+            </section>
+            <section class="allButtons">
+                <div class="bottomButtons">
+                    <div class="operationNumberGrid">
+                        <button class="blackOnWhite second" id="Second">2nd</button>
+                        <button class="whiteOnBlue degree">
+                            <span class ="flip0" id="DEGREE_SPAN">deg</span>
+                            <span class ="flip1" id="RADIAN_SPAN">rad</span>
+                        </button>
+                        <button class="whiteOnBlue delete">
+                            <span class ="flip0" id="DELETE_SPAN">del</span>
+                            <span class ="flip1" id="INSERT_SPAN">ins</span>
+                        </button>
+                        <button class="whiteOnBlack left">
+                            <svg xmlns="http://www.w3.org/2000/svg" width=".75rem" height=".75rem" viewBox="0 0 10 10">
+                                <polygon points="5,0 0,10 10,10"/>
+                            </svg>
+                        </button>
+                        <button class="whiteOnBlack right">
+                            <svg xmlns="http://www.w3.org/2000/svg" width=".75rem" height=".75rem" viewBox="0 0 10 10">
+                                <polygon points="5,0 0,10 10,10"/>
+                            </svg>
+                        </button>
+                        <button  class="whiteOnBlue sin">
+                            <span class ="flip0" id="SIN_SPAN">Sin</span>
+                            <span class ="flip1" id="ARCSIN_SPAN">sin<sup>-1</sup></span>
+                        </button>
+                        <button  class="whiteOnBlue cos">
+                            <span class ="flip0" id="COSINE_SPAN">Cos</span>
+                            <span class ="flip1" id="ARCOS_SPAN">cos<sup>-1</sup></span>
+                        </button>
+                        <button  class="whiteOnBlue tan">
+                            <span class ="flip0" id="TANGENT_SPAN">tan</span>
+                            <span class ="flip1" id="ARCTAN_SPAN">tan<sup>-1</sup></span>
+                        </button>
+                        <button  class="whiteOnBlue Pi">
+                            <span class ="flip0" id="PI_BUTTON">3.14</span>
+                            <span class ="flip1" id="PERCENT_SPAN">%</span>
+                        </button>
+                        <button  class="whiteOnBlue clear" id="CLEAR_BUTTON">clr</button>
+                        <button  class="whiteOnBlue exponent">
+                            <span class ="flip0" id="EXPONENT_SPAN">^</span>
+                            <span class ="flip1" id="xROOT_SPAN"><sup>x</sup>&radic;</span>
+                        </button>
+                        <button  class="whiteOnBlue EE">
+                            <span class ="flip0" id="xNegOne_SPAN">x<sup>-1</sup></span>
+                            <span class ="flip1" id="EE_SPAN">EE</span>
+                        </button>
+                        <button  class="whiteOnBlue" id="LEFT_PARENTHESES_SPAN">(</button>
+                        <button  class="whiteOnBlue" id="RIGHT_PARENTHESES_SPAN">)</button>
+                        <button  class="whiteOnBlack divide" id="DIVIDE_BUTTON">/</button>
+                        <button  class="whiteOnBlue square">
+                            <span class ="flip0" id="SQUARE_SPAN">x^<sup>2</sup></span>
+                            <span class ="flip1" id="SQUARE_ROOT_SPAN">&radic;<sup>x</sup></span>
+                        </button>
+                        <button  class="blackOnWhite number 7" id="SEVEN_BUTTON">7</button>
+                        <button  class="blackOnWhite number 8" id="EIGHT_BUTTON">8</button>
+                        <button  class="blackOnWhite number 9" id="NINE_BUTTON">9</button>
+                        <button  class="whiteOnBlack mul" id="MULTIPLY_BUTTON">X</button>
+                        <button  class="whiteOnBlue Log">
+                            <span class ="flip0" id="LOG_SPAN">log</span>
+                            <span class ="flip1" id="TENX_SPAN">10<sup>x</sup></span>
+                        </button>
+                        <button  class="blackOnWhite number 4" id="FOUR_BUTTON">4</button>
+                        <button  class="blackOnWhite number 5" id="FIVE_BUTTON">5</button>
+                        <button  class="blackOnWhite number 6" id="SIX_BUTTON">6</button>
+                        <button  class="whiteOnBlack subtract" id="SUBTRACT_BUTTON">-</button>
+                        <button  class="whiteOnBlue Ln">
+                            <span class ="flip0" id="NATURAL_LOG_SPAN">Ln</span>
+                            <span class ="flip1" id="EX_SPAN">e<sup>x</sup></span>
+                        </button>
+                        <button  class="blackOnWhite number 1" id="ONE_BUTTON">1</button>
+                        <button  class="blackOnWhite number 2" id="TWO_BUTTON">2</button>
+                        <button  class="blackOnWhite number 3" id="THREE_BUTTON">3</button>
+                        <button  class="whiteOnBlack plus" id="ADDITION_BUTTON">+</button>
+                        <button  class="whiteOnBlue" id="On">
+                            <span class ="flip0 On" id="onSpan">On</span>
+                            <span class ="flip1 Off" id="offSpan">Off</span>
+                        </button>
+                        <button  class="blackOnWhite number 0" id="ZERO_BUTTON">0</button>
+                        <button  class="blackOnWhite radix" id="RADIX_BUTTON">.</button>
+                        <button  class="blackOnWhite (-)" id="NEGATIVE_BUTTON">(-)</button>
+                        <button  class="whiteOnBlack Enter" id="ENTER_BUTTON">=</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <a href="https://github.com/TomNdPop/">
+                <img src="./images/blaCkmichiganLogo.avif" alt="calcMi" id="imgfoot">
+                <span class="rotate">R</span>
+                <span class="rotate">y</span>
+                <span class="rotate">a</span>
+                <span class="rotate">n</span>
+                <span class="rotate"> </span>
+                <span class="rotate">L</span>
+                <span class="rotate">.</span>
+            </a>
+        </footer> 
+    </div>
+    
+    <script src="./docs/978.bundle.js"></script>
+    <script src="./docs/42.bundle.js"></script>
+    <script src="./docs/main.bundle.js"></script>
+</body>
+</html>
