@@ -1,7 +1,5 @@
 
-//constant declarations
-export /** @type {*} */
-var EXPRESSION_OBJECT = {
+export var EXPRESSION_OBJECT = {
     string : [],
     listeners: [],
     push(item){
@@ -17,7 +15,31 @@ var EXPRESSION_OBJECT = {
     },
     notify(){
         this.listeners.forEach(func=>func(this.string));
+    },
+    getLength() {
+        return this.string.length;
+    },
+    getCharacterLength() {
+        return this.string.join('').length;
+    },
+    getGridCountForToken: function(token) {
+        let tokenMapping = MULTIPLE[token];
+        let gridSet = new Set();
+        
+        if (tokenMapping) {
+            // Multi-character token
+            for (let char in tokenMapping) {
+                tokenMapping[char].forEach(position => gridSet.add(position));
+            }
+        } else {
+            // Single-character token
+            DISPLAY_WHAT_SINGLE[token].forEach(position => gridSet.add(position));
+        }
+        
+        return gridSet.size + 1;  // Unique grid positions plus 1
     }
+    
+
 };
 
 export var DISPLAY_WHAT_SINGLE = {

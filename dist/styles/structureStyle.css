@@ -448,9 +448,14 @@ a:hover{
 }
 
 .activatedPixel{
-  background-color:#6d7c17;
+  background-color:#5a6617;
 }
 
 .activeScreenText{
     color:#6d7c17;
 }
+
+.activeCursor{
+  background-color:#151805;
+}
+    

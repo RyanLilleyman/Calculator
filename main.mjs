@@ -62,7 +62,9 @@ const buttonHandlers = {
     'NEGATIVE':CALLBACKS.negClicked,
     'ENTER' : CALLBACKS.equalClicked,
     'DEGREE' : CALLBACKS.degClicked,
-    'RADIAN' : CALLBACKS.radClicked
+    'RADIAN' : CALLBACKS.radClicked,
+    'RIGHTARROW' : CALLBACKS.rightArrowClicked,
+    'LEFTARROW' : CALLBACKS.leftArrowClicked
 
 };
 
