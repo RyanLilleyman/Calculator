@@ -335,9 +335,9 @@ html {
   
   .whiteOnBlack:hover{
     color: #2E3440;
-    background-color: #a7adb8;
+    background-color: #eef1f5;
     border: 0.2rem solid #E5E9F0;
-    box-shadow: 1px 1px #a7adb8,2px 2px #a7adb8;
+    box-shadow: 1px 1px #eef1f5,2px 2px #eef1f5;
   }
   
   .blackOnWhite:hover{
@@ -446,7 +446,7 @@ html {
   
   
     .top svg, .right svg, .bottom svg, .left svg{
-      fill: white;
+      fill: #2E3440;
     }
   
     .right svg{
