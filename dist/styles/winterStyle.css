@@ -524,6 +524,19 @@ html {
   #imgfoot:hover{
       transform: translate(0px, 6px) rotate(360deg) ;
   }
+  .calculatorImg{
+    height: 10rem;
+    width: 8.5rem;
+    margin-left: 2rem;
+    transition: all 0.7s ease-in-out;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px black;
+   }
+  
+   .calculatorImg:hover{
+    transform: scale(1.1);
+   }
+  
   
   
   .screenOff{
