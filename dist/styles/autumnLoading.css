@@ -14,7 +14,7 @@
   align-items: center;
   height: 100vh;
   background: #000;  /* Retro screens were often black */
-  margin: 0;
+  margin: 0.5rem;
   font-family: 'Courier New', Courier, monospace;  /* Retro computers often used monospace fonts */
   perspective: 1000px;
 }
