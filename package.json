@@ -11,6 +11,7 @@
   "scripts": {
 
     "test": "echo \"Error: no test specified\" && exit 1",
+
     "build": "webpack"
 
   },
@@ -22,6 +23,10 @@
   "license": "ISC",
 
   "dependencies": {
+
+    "jquery": "^3.7.0",
+
+    "jsquery": "^1.1.1",
 
     "mathjs": "^11.8.2"
 

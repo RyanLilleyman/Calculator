@@ -1,0 +1,99 @@
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+#preloader.fadeOut {
+    animation-name: fadeOut;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;  /* Retains the final state after the animation */
+}
+#preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #000;  /* Retro screens were often black */
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;  /* Retro computers often used monospace fonts */
+  perspective: 1000px;
+}
+
+.loader {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 300px;  /* Making elements smaller can give a pixelated retro feel */
+  height: 150px;
+  transform-style: preserve-3d;
+}
+
+.element {
+  position: relative;
+  background: #0F0;  /* Retro screens often had green text */
+  width: 30px;  /* Smaller elements */
+  height: 30px;
+  border-radius: 0;  /* Retro screens were pixelated, so no round corners */
+}
+
+  
+  
+  @keyframes move {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-50px);
+    }
+  }
+  
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 10px #ecc890;
+    }
+    50% {
+      box-shadow: 0 0 20px #f0cb98, 0 0 30px #f1cfa2;
+    }
+  }
+  
+  @keyframes fade {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  
+  @keyframes scale {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+
+
+  .element:nth-child(1), .element:nth-child(3) {
+    background: #D1C4E9;  /* Green */
+}
+
+.element:nth-child(2), .element:nth-child(4) {
+    background: #FFCCBC;  /* Yellow */
+}
+  .element:nth-child(1) {
+    animation: move 2s infinite, glow 2s infinite, fade 2s infinite;
+  }
+  
+  .element:nth-child(2) {
+    animation: move 2s infinite reverse, glow 2s infinite, fade 2s infinite;
+  }
+  
+  .element:nth-child(3) {
+    animation: move 2s infinite, glow 2s infinite, fade 2s infinite;
+  }
+  
+  .element:nth-child(4) {
+    animation: move 2s infinite reverse, glow 2s infinite, fade 2s infinite;
+  }

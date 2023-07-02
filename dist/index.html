@@ -17,6 +17,7 @@
         </div>
     </div>
     <div class="calculatorFade">
+        <div class="calculatorfooter">
         <main class="calculator">
             <section class="no-button">
                 <div class="screen">
@@ -963,18 +964,41 @@
                 </div>
             </section>
         </main>
+    
         <footer>
-            <a href="https://github.com/TomNdPop/">
-                <img src="./images/blaCkmichiganLogo.avif" alt="calcMi" id="imgfoot">
-                <span class="rotate">R</span>
-                <span class="rotate">y</span>
-                <span class="rotate">a</span>
-                <span class="rotate">n</span>
-                <span class="rotate"> </span>
-                <span class="rotate">L</span>
-                <span class="rotate">.</span>
+            <a href="https://github.com/TomNdPop/" class="aTag">
+                <img src="/dist/images/blaCkmichiganLogo.avif" alt="calcMi" id="imgfoot">
+                <span>R</span>
+                <span>y</span>
+                <span>a</span>
+                <span>n</span>
+                <span> </span>
+                <span>L</span>
+                <span>.</span>
             </a>
         </footer> 
+        </div>
+        <div id="menu">
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <div class="menu-inner">
+                
+                <ul>
+                    <li><a href="./pages/purple.html">Purple</a></li>
+                    <li><a href="./pages/winter.html">Winter</a></li>
+                    <li><a href="/dist/pages/summer.html">Summer</a></li>
+                    <li><a href="/dist/pages/autumn.html">Autumn</a></li>
+                    <li>Menu Item</li>
+                    <li>Menu Item</li>
+                </ul>
+            </div>
+            <svg version="1.1" id="blob"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <path id="blob-path" d="M60,500H0V0h60c0,0,20,172,20,250S60,900,60,500z"/>
+            </svg>
+        </div>
     </div>
     <script>
         setTimeout(function(){
@@ -987,7 +1011,7 @@
 
         setTimeout(function(){
             document.getElementById('preloader').style.display = 'none';
-            document.querySelector('.calculatorFade').style.display = 'block';
+            document.querySelector('.calculatorFade').style.display = 'flex';
             document.querySelector('.calculatorFade').classList.add('fadeIn');
         }, 2500);
     </script>
