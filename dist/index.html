@@ -1008,10 +1008,11 @@
         </div>
         </div>
     </div>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         let soundDown = new Audio('./sounds/buttonDown.wav');
         let soundUp = new Audio('./sounds/buttonUp.wav');
+        
 
         function buttonDown(){
             soundDown.pause();
@@ -1027,29 +1028,36 @@
             soundUp.play();
         }
 
-        const buttons = document.querySelectorAll('button');
+        function isMobileDevice() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        let mobileCheck =  isMobileDevice();
+
+
+        if(mobileCheck){
+            $(document).ready(function(){
+            $("button").on('touchstart', function(){
+                $(this).addClass('activeTouch');
+            });
+            
+            $("button").on('touchend', function(){
+                $(this).removeClass('activeTouch');
+            });
+            $("button").on('touchmove', function(){
+                $(this).removeClass('activeTouch');
+            });
+            });
+        }else{
+            const buttons = document.querySelectorAll('button');
         buttons.forEach(button => {
             button.addEventListener('mousedown', buttonDown);
             button.addEventListener('mouseup', buttonUp);
         });
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <script>
-    $(document).ready(function(){
-      $("button").on('touchstart', function(){
-        $(this).addClass('activeTouch');
-      });
-    
-      $("button").on('touchend', function(){
-        $(this).removeClass('activeTouch');
-      });
-      $("button").on('touchmove', function(){
-        $(this).removeClass('activeTouch');
-      });
-    });
+        }
         
     </script>
+   
     <script src="./42.bundle.js"></script>
     <script src="./978.bundle.js"></script>
     <script src="./bundle.js"></script>
