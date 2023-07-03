@@ -1044,7 +1044,11 @@
       $("button").on('touchend', function(){
         $(this).removeClass('activeTouch');
       });
+      $("button").on('touchmove', function(){
+        $(this).removeClass('activeTouch');
+      });
     });
+        
     </script>
     <script src="./42.bundle.js"></script>
     <script src="./978.bundle.js"></script>
