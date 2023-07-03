@@ -505,9 +505,11 @@ export function enterClicked() {
    var arrToString = newArr.join('');
 
    // Dynamically import mathjs
-   const math = await import('mathjs');
+   // Dynamically import mathjs
+  const math = await import('./custom-math.js');
 
-   var result = math.evaluate(arrToString);
+  var result = math.default.evaluate(arrToString);
+
    console.log(result);
 
    displayResult(result);

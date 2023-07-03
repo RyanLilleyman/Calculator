@@ -339,26 +339,23 @@ button{
     cursor: pointer;
 } */
 
-/* .whiteOnBlue:hover{
+.whiteOnBlue:hover{
   color: #FFFFFF;
   background-color:#6A8F2A  ;
   border: 0.2rem solid #507025;
-  box-shadow: 1px 1px #6A8F2A,2px 2px #6A8F2A;
 }
 
 .whiteOnBlack:hover{
   color: #FFFFFF;
   background-color: #6EA388;
   border: 0.2rem solid #5C8970;
-  box-shadow: 1px 1px #6EA388,2px 2px #6EA388;
 }
 
 .blackOnWhite:hover{
   color: #000000;
     background-color: #6AB59C;
     border: 0.2rem solid #538270;
-    box-shadow: 1px 1px #6AB59C,2px 2px #6AB59C;
-} */
+}
 
 .whiteOnBlue:active, .blackOnWhite:active, .whiteOnBlack:active{
     top:4px;
