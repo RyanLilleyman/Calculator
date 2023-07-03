@@ -14,6 +14,7 @@ import * as GRIDPARSER from "./gridParser.mjs"
 */
 export function seconded(e){
    console.log(e);
+   CONSTANTS.TON.remove();
    if(CONSTANTS.FLAGLIST.isOn){
        CONSTANTS.FLIP_ZERO.forEach(btn => btn.classList.toggle('flipF'));
        CONSTANTS.FLIP_ONE.forEach(btn => btn.classList.toggle('flipB'));

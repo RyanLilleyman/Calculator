@@ -329,6 +329,8 @@ export const RADIAN_SCREEN = document.querySelector('#radianScreenText');
 
 export const FORWARD = document.querySelector('#forwardSlash');
 
+export var TON = document.querySelector('.TURNON');
+
 export /** @type {*} Object that defines the flags for state management.*/
 const FLAGLIST = {
     isOn : false,
