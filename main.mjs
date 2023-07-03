@@ -78,7 +78,7 @@ for (const buttonId in buttonHandlers) {
 console.log(CONSTANTS.EXPRESSION_OBJECT.string.length);
 
 
-
+document.addEventListener('DOMContentLoaded',CALLBACKS.onClicked);
 
 
 //Uncomment the code below to check all buttons if working or not.
