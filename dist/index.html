@@ -17,7 +17,7 @@
         </div>
     </div> -->
     <div class="calculatorFade">
-        <div id="menu">
+        <!-- <div id="menu">
             <div class="hamburger">
                 <div class="line"></div>
                 <div class="line"></div>
@@ -35,7 +35,7 @@
             <svg version="1.1" id="blob"xmvscode-file://vscode-app/usr/share/code/resources/app/out/vs/code/electron-sandbox/workbench/workbench.htmllns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                 <path id="blob-path" d="M60,500H0V0h60c0,0,20,172,20,250S60,900,60,500z"/>
             </svg>
-        </div>
+        </div> -->
         <div class="flexOn">
         <div>
             1. TURN ON.
@@ -1032,6 +1032,19 @@
             button.addEventListener('mousedown', buttonDown);
             button.addEventListener('mouseup', buttonUp);
         });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+    $(document).ready(function(){
+      $("button").on('touchstart', function(){
+        $(this).addClass('activeTouch');
+      });
+    
+      $("button").on('touchend', function(){
+        $(this).removeClass('activeTouch');
+      });
+    });
     </script>
     <script src="./42.bundle.js"></script>
     <script src="./978.bundle.js"></script>
