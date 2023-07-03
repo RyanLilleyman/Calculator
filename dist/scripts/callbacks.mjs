@@ -14,7 +14,6 @@ import * as GRIDPARSER from "./gridParser.mjs"
 */
 export function seconded(e){
    console.log(e);
-   CONSTANTS.TON.remove();
    if(CONSTANTS.FLAGLIST.isOn){
        CONSTANTS.FLIP_ZERO.forEach(btn => btn.classList.toggle('flipF'));
        CONSTANTS.FLIP_ONE.forEach(btn => btn.classList.toggle('flipB'));
@@ -352,6 +351,7 @@ function toggleGridClass(changeTo){
 * @param {*} e
 */
 export function offClicked(e){
+   CONSTANTS.TON.remove();
    CONSTANTS.ON.classList.remove('activatedBLUEOW');
    CONSTANTS.SCREEN_OFF.forEach(x=>x.classList.remove('on'));
    CONSTANTS.FLIP_ZERO.forEach(btn => btn.classList.remove('flipF'));
