@@ -327,13 +327,13 @@ button{
 }
 
 
-.whiteOnBlue:hover, .blackOnWhite:hover, .whiteOnBlack:hover{
+/* .whiteOnBlue:hover, .blackOnWhite:hover, .whiteOnBlack:hover{
     top:2px;
     left:2px;
     cursor: pointer;
-}
+} */
 
-.whiteOnBlue:hover{
+/* .whiteOnBlue:hover{
   color: #FFFFFF;
   background-color:#6A8F2A  ;
   border: 0.2rem solid #507025;
@@ -352,7 +352,7 @@ button{
     background-color: #6AB59C;
     border: 0.2rem solid #538270;
     box-shadow: 1px 1px #6AB59C,2px 2px #6AB59C;
-}
+} */
 
 .whiteOnBlue:active, .blackOnWhite:active, .whiteOnBlack:active{
     top:4px;
