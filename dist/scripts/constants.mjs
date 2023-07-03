@@ -331,7 +331,7 @@ export const FORWARD = document.querySelector('#forwardSlash');
 
 export /** @type {*} Object that defines the flags for state management.*/
 const FLAGLIST = {
-    isOn : false,
+    isOn : true,
     gridDefined: false,
     angleMode : false,
 };

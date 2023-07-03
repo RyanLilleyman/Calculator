@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/loadingPurple.css">
+    
     <link rel="stylesheet" href="../styles/purpleStyle.css">
     <title>PlusMinus</title>
 </head>
@@ -998,20 +998,30 @@
             </svg>
         </div>
     </div>
+    
     <script>
-        setTimeout(function(){
-        document.querySelector('.calculatorFade').style.display = 'none';
-            }, 0
-        );
-        setTimeout(function(){
-            document.getElementById('preloader').classList.add('fadeOut');
-        }, 2000);
+        let soundDown = new Audio('../sounds/buttonDown.wav');
+        let soundUp = new Audio('../sounds/buttonUp.wav');
 
-        setTimeout(function(){
-            document.getElementById('preloader').style.display = 'none';
-            document.querySelector('.calculatorFade').style.display = 'flex';
-            document.querySelector('.calculatorFade').classList.add('fadeIn');
-        }, 2500);
+        function buttonDown(){
+            soundDown.pause();
+            soundDown.currentTime = 0;
+            soundDown = soundDown.cloneNode();
+            soundDown.play();
+        }
+
+        function buttonUp(){
+            soundUp.pause();
+            soundUp.currentTime = 0;
+            soundUp = soundUp.cloneNode();
+            soundUp.play();
+        }
+
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.addEventListener('mousedown', buttonDown);
+            button.addEventListener('mouseup', buttonUp);
+        });
     </script>
     
     <script src="../42.bundle.js"></script>

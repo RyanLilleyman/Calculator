@@ -147,6 +147,15 @@ html {
 --chamoisee: #9F805Fff;
 --coyote: #85715Dff; */
 
+.flexOn{
+  display: flex;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  text-transform: capitalize;
+}
+
 .calculator{
   padding-top: 0.5rem;
   padding-bottom: 0.4rem;

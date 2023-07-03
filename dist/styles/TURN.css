@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+.TURNON {
+   
+    /* top: 50%; */
+    /* left: 50%; */
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin-top: 36rem;
+}
+
+.TURNONARROW {
+    position: relative;
+    transform: rotate(270deg);
+    cursor: pointer;
+}
+
+.TURNONARROW span {
+    display: block;
+    width: 1.5vw;
+    height: 1.5vw;
+    border-bottom: 5px solid rgb(0, 0, 0);
+    border-right: 5px solid rgb(0, 0, 0);
+    transform: rotate(30deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.TURNONARROW span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.TURNONARROW span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+.TURNONTEXT {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    margin-top: 63px;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+}
+.TURNONTEXT:hover {
+    color: rgb(119, 117, 117); /* Change color to red when hovered */
+}
+
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px, -20px);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(45deg) translate(20px, 20px);
+    }
+}
