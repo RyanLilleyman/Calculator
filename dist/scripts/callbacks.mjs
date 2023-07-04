@@ -415,6 +415,7 @@ function escapeRegExp(string){
 }
 
 function displayResult(result) {
+  let worldEnd = document.querySelector('html');
   if (typeof(result) === 'object') {
     console.log('DomainErr.');
     let resultString = 'DOMAIN.err.';
@@ -444,148 +445,44 @@ function displayResult(result) {
       }
     }
     }else if(typeof(result) === 'number'){
-      console.log('Result: ', result);
-      console.log("Type: ", typeof result);
-     const resultString = String(result);
-     const resultArray = resultString.split('');
-     console.log(resultArray);
+      if(result == 'Infinity' || result == '-Infinity' || result == NaN){
+        screams.play();
+        worldEnd.remove();
+      }else{
+        console.log('Result: ', result);
+        console.log("Type: ", typeof result);
+        const resultString = String(result);
+        const resultArray = resultString.split('');
+        console.log(resultArray);
     
-     for (let i = 0; i < resultArray.length; i++) {
-       const containerID = i + 12;
-       const container = document.getElementById(`gridspace${String(containerID).padStart(2, '0')}`);
-    
-       if (container) {
-         const digit = resultArray[i];
-    
-         // Clear existing classes
-         const children = Array.from(container.children);
-         children.forEach(child => child.classList.remove('activatedPixel'));
-    
-         // Add 'activatedPixel' class to the corresponding digit
-         const displayData = CONSTANTS.DISPLAY_WHAT_SINGLE[digit];
-         if (displayData) {
-           const indices = Array.isArray(displayData) ? displayData : [displayData];
-           indices.forEach(index => {
-             if (index < children.length) {
-               children[index].classList.add('activatedPixel');
-               console.log(`Added 'activatedPixel' to child at index ${index}`);
-             }
-           });
-         }
-       }
-     }
-    }
+        for (let i = 0; i < resultArray.length; i++) {
+            const containerID = i + 12;
+            const container = document.getElementById(`gridspace${String(containerID).padStart(2, '0')}`);
+        
+            if (container) {
+              const digit = resultArray[i];
+        
+              // Clear existing classes
+              const children = Array.from(container.children);
+              children.forEach(child => child.classList.remove('activatedPixel'));
+        
+              // Add 'activatedPixel' class to the corresponding digit
+              const displayData = CONSTANTS.DISPLAY_WHAT_SINGLE[digit];
+              if (displayData) {
+                const indices = Array.isArray(displayData) ? displayData : [displayData];
+                indices.forEach(index => {
+                  if (index < children.length) {
+                    children[index].classList.add('activatedPixel');
+                    console.log(`Added 'activatedPixel' to child at index ${index}`);
+                  }
+                });
+              }
+            }
+          }
+    } 
+  }
 }
 
-// // Modify enterClicked function to call displayResult with the result
-// export function enterClicked() {
-//  return async function (e) {
-//    let arr = CONSTANTS.EXPRESSION_OBJECT.string;
-//    console.log(arr);
-//    if (arr[arr.length-1].includes('sin(','tan(','cos(')){
-//     console.log('contains trig.')
-//    }
-
-//    let dictionaryOfArrayElementsToChange = {
-//      p: '(pi)',
-//      "E": "*10^",
-//       "!" : "^-1",
-//       "S" : "-",
-//       "@" : "^2",
-//       "xRt":"nthRoot(",
-//       "(tn" : "(10^",
-//    }
-
-//    var newArr = arr.map(item => {
-//      let newItem = item;
-//      for (let key in dictionaryOfArrayElementsToChange) {
-//        if (newItem.includes(key)) {
-//          newItem = newItem.replace(new RegExp(escapeRegExp(key), 'g'), dictionaryOfArrayElementsToChange[key]);
-//        }
-//      }
-//      return newItem;
-//    });
-
-//    //If CONSTANTS.FLAGLIST.anglemode is true, Include check of array tokens that fall after an item that 
-//    // includes sin(, tan(, cos(
-//    // convert this token which if a number to
-   
-
-//    console.log(newArr);
-//    var arrToString = newArr.join('');
-
-//    // Dynamically import mathjs
-//    // Dynamically import mathjs
-//   const math = await import('./custom-math.js');
-
-//   var result = math.default.evaluate(arrToString);
-
-//    console.log(result);
-
-//    displayResult(result);
-//  }
-// }
-
-
-// const trigFunctions = ['sin(', 'cos(', 'tan(', 'asin(', 'acos(', 'atan('];
-
-// export function enterClicked() {
-//   return async function (e) {
-//     let arr = CONSTANTS.EXPRESSION_OBJECT.string;
-//     console.log(arr);
-
-//     let dictionaryOfArrayElementsToChange = {
-//       p: '(pi)',
-//       "E": "*10^",
-//       "!": "^-1",
-//       "S": "-",
-//       "@": "^2",
-//       "xRt":"nthRoot(",
-//       "(tn" : "(10^",
-//     }
-
-//     let newArr = arr.map(item => {
-//       let newItem = item;
-//       for (let key in dictionaryOfArrayElementsToChange) {
-//         if (newItem.includes(key)) {
-//           newItem = newItem.replace(new RegExp(escapeRegExp(key), 'g'), dictionaryOfArrayElementsToChange[key]);
-//         }
-//       }
-
-//       // If the angle mode is true, check if it's a trigonometric function and convert the degree to radian
-//       if (CONSTANTS.FLAGLIST.angleMode === true) {
-//         for (let func of trigFunctions) {
-//           if (newItem.includes(func)) {
-//             let degreeIndex = newItem.indexOf(func) + func.length - 1;
-//             let degreeEnd = newItem.indexOf(')', degreeIndex);
-//             if (degreeEnd !== -1) {
-//               let degreeValue = parseFloat(newItem.substring(degreeIndex, degreeEnd));
-//               if (!isNaN(degreeValue)) {
-//                 let radianValue = math.unit(degreeValue, 'deg').toNumber('rad');
-//                 newItem = newItem.substring(0, degreeIndex) + radianValue + newItem.substring(degreeEnd);
-//               }
-//             }
-//           }
-//         }
-//       }
-
-//       return newItem;
-//     });
-
-//     console.log(newArr);
-
-//     var arrToString = newArr.join('');
-
-//     // Dynamically import mathjs
-//     const math = await import('./custom-math.js');
-
-//     var result = math.default.evaluate(arrToString);
-
-//     console.log(result);
-
-//     displayResult(result);
-//   }
-// }
 
 const trigFunctions = ['sin(', 'cos(', 'tan(', 'asin(', 'acos(', 'atan('];
 
