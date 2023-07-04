@@ -1,20 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
 .TURNON {
+    display: flex;
     /* top: 50%; */
     /* left: 50%; */
     transform: translate(-50%, -50%);
     text-align: center;
-    margin-top: 21.5rem;
+    margin-top: 0rem;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
-.TURNONARROW {
+.TURNONARROWTOP, .TURNONARROWBOTTOM {
     position: relative;
     transform: rotate(270deg);
     cursor: pointer;
 }
+.TURNONARROWTOP{
+    margin-bottom: 11.5rem;
+}
+.TURNONARROWBOTTOM{
+    margin-bottom: 3.5rem;
+}
 
-.TURNONARROW span {
+.TURNONARROWTOP span, .TURNONARROWBOTTOM span {
     display: block;
     width: 0.5rem;
     height: 0.5rem;
@@ -25,24 +34,28 @@
     animation: animate 2s infinite;
 }
 
-.TURNONARROW span:nth-child(2) {
+.TURNONARROWTOP span:nth-child(2), .TURNONARROWBOTTOM span:nth-child(2) {
     animation-delay: -0.2s;
 }
 
-.TURNONARROW span:nth-child(3) {
+.TURNONARROWTOP span:nth-child(3), .TURNONARROWBOTTOM span:nth-child(3) {
     animation-delay: -0.4s;
 }
 
-.TURNONTEXT {
+.TURNONTEXTTOP, .TURNONTEXTBOTTOM {
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     font-weight: bold;
-    color: rgb(0, 0, 0);
-    margin-top: 6rem;
-    
+    color: rgb(0, 0, 0);   
 }
-.TURNONTEXT:hover {
-    color: rgb(119, 117, 117); /* Change color to red when hovered */
+.TURNONTEXTTOP{
+    margin-top: -15rem;
+}
+.TURNONTEXTBOTTOM{
+    margin-top: 2.6rem;
+}
+.TURNONTEXTTOP:hover, .TURNONTEXTBOTTOM:hover {
+    color: rgb(119, 117, 117);
 }
 
 

@@ -150,11 +150,11 @@ html {
 
 .flexOn{
   display: flex;
-  align-content: center;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: nowrap;
-  text-transform: capitalize;
+    align-content: center;
+    /* justify-content: flex-start; */
+    align-items: flex-end;
+    flex-wrap: nowrap;
+    text-transform: capitalize;
 }
 
 .calculator{
