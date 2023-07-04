@@ -1,108 +1,11 @@
 
 /*general html*/
 html {
-    background: linear-gradient(to bottom, #D1C4E9, #FFCCBC);
-/* Create a positioning context for pseudo-elements */
-    }
+  background: linear-gradient(to bottom, #D1EFFE, #F3f8f7);
+    height: 100%;
+  }
   
-    body, html {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-    }
-  
-    #menu {
-      height: 100%;
-      position: fixed;
-      background-color: #e2dcc4;
-      width: 300px;
-      transition: 1000ms all cubic-bezier(0.19, 1, 0.22, 1);
-      transform: translateX(-100%);
-      left: 60px;
-    }
-  
-    #menu.expanded {
-      transform: translateX(0%);
-      left: 0px;
-    }
-  
-    .menu-inner {
-      width: 100%;
-      height: 100%;
-      position: relative;
-    }
-  
-    #blob {
-      top: 0;
-      z-index: -1;
-      right: 60px;
-      transform: translateX(100%);
-      height: 100%;
-      position: absolute;
-    }
-  
-    #blob-path {
-      height: 100%;
-      fill:  #e2dcc4;
-    }
-  
-    .hamburger {
-      right: 20px;
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      margin-top: -10px;	
-    }
-  
-    .hamburger .line {
-      width: 100%;
-      height: 4px;
-      background-color: #fff;
-      position: absolute;
-    }
-  
-    .hamburger .line:nth-child(2) {
-      top: 50%;
-      margin-top: -2px;
-    }
-  
-    .hamburger .line:nth-child(3) {
-      bottom: 0;
-    }
-  
-    h1 {
-      position: fixed;
-      right: 0;
-      margin: 0;
-    }
-  
-    ul {
-      padding: 0;
-      list-style: none;
-      width: 80%;
-      margin-left: 10%;
-      position: absolute;
-      top: 10px;
-    }
-  
-    ul li {
-      color: #fff;
-      font-family: sans-serif;
-      padding: 20px 0;
-    }
-  
-    h2 {
-      position: absolute;
-       left: 50%;
-      color: #fff;
-      margin: 0;
-      font-size: 16px;
-      font-family: sans-serif;
-      font-weight: 100;
-    }
-  
-  
+ 
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -118,6 +21,7 @@ html {
       height: 100%;
       flex-direction: column;
       flex-wrap: nowrap;
+      gap: 3rem;
   }
   .calculatorFade.fadeIn{
     animation-name: fadeIn;
@@ -148,22 +52,31 @@ html {
   --chamoisee: #9F805Fff;
   --coyote: #85715Dff; */
   
+  .flexOn{
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    text-transform: capitalize;
+  }
+  
   .calculator{
     padding-top: 0.5rem;
     padding-bottom: 0.4rem;
-    margin: 10rem auto 2rem auto;
+   
     width: 21rem;
     height: 28rem;
     max-width: 100%;
     max-height: 100%;
-    background-color: #F5DEB3;
+    background-color: #FFFFFF;
     display: flex;
     flex-direction: column;
     border-radius: 1px;
     align-items: center;
     border-radius: 3px;
-    border: 0.1rem solid #8D6E63 ;
-    box-shadow: 1px 1px 0px #8D6E63 , 2px 2px 0px #8D6E63 , 3px 3px 0px #8D6E63 , 4px 4px 0px #8D6E63 , 5px 5px 0px #8D6E63 , 6px 6px 0px #8D6E63 ;
+    border: 0.1rem solid #CCCCCC;
+    box-shadow: 1px 1px 0px #CCCCCC, 2px 2px 0px #CCCCCC, 3px 3px 0px #CCCCCC, 4px 4px 0px #CCCCCC, 5px 5px 0px #CCCCCC, 6px 6px 0px #CCCCCC;
     overflow: hidden;
     justify-content: center;
     
@@ -182,7 +95,7 @@ html {
       width: 19rem;
       /* max-width: 100%; */
       /* max-height: 100%; */
-      background-color: #DEB887 ;
+      background-color: #E4F0EE ;
       border: 0.075rem solid #636363;
       box-shadow: 0.1rem 0.1rem 4px #000000 inset;
       flex-direction: column;
@@ -216,7 +129,7 @@ html {
     height: 6rem;
     padding-top: 1rem;
     margin: 0.2rem auto 0.2rem auto;
-    background-color: #FFF8DC;
+    background-color: #F7F7F7;
     border: 0.075rem solid #594f44;
     box-shadow: 1px 1px 4px 0px #594f44 inset;
     z-index: 1;
@@ -269,6 +182,12 @@ html {
   button{
     width: 3.8rem;
     height: 2.4rem;
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none;
     
   }
   
@@ -298,55 +217,50 @@ html {
   }
   
   .whiteOnBlue{
-    color: #5D4037  ;
-    background-color:#FFA726;
-    border: 0.15rem solid #d87803;
-    box-shadow: 1px 1px #FFA726, 2px 2px #FFA726, 3px 3px #FFA726, 4px 4px #FFA726;
+    color: #2E3440;
+    background-color:#88C0D0;
+    border: 0.15rem solid  #81A1C1;
+    box-shadow: 1px 1px #88C0D0 , 2px 2px #88C0D0, 3px 3px #88C0D0, 4px 4px #88C0D0;
   }
   
   .whiteOnBlack{
-    color:   #3E2723;
-      background-color: #F57C00 ;
-      border: 0.15rem solid  #c95d05;
-      box-shadow: 1px 1px  #F57C00 , 2px 2px  #F57C00 ,  3px 3px #F57C00 ,4px 4px #F57C00 ;
-      
-  }
+      color:  #2E3440;
+      background-color: #D8DEE9;
+      border: 0.15rem solid  #E5E9F0;
+      box-shadow: 1px 1px  #D8DEE9, 2px 2px  #D8DEE9, 3px 3px  #D8DEE9,4px 4px  #D8DEE9;
+    }
   
   .blackOnWhite{
-    color:  #3E2723;
-    background-color: #E64A19;
-    border: 0.15rem solid #aa310c;
-    box-shadow: 1px 1px #E64A19, 2px 2px #E64A19, 3px 3px #E64A19,4px 4px #E64A19;
-  }
+    color:  #ECEFF4;
+    background-color: #5E81AC;
+    border: 0.15rem solid #4C566A;
+    box-shadow: 1px 1px #5E81AC, 2px 2px #5E81AC, 3px 3px #5E81AC,4px 4px #5E81AC;
+ }
   
   
-  .whiteOnBlue:hover, .blackOnWhite:hover, .whiteOnBlack:hover{
+  /* .whiteOnBlue:hover, .blackOnWhite:hover, .whiteOnBlack:hover{
       top:2px;
       left:2px;
       cursor: pointer;
-  }
+  } */
   
   .whiteOnBlue:hover{
-    color: #5D4037  ;
-    background-color:#fac575;
-    border: 0.15rem solid #d87803;
-    box-shadow: 1px 1px #fac575, 2px 2px #fac575;
+    color: #2E3440;
+    background-color:#71a0ad;
+    border: 0.2rem solid #476380;
   }
   
   .whiteOnBlack:hover{
-    color:   #3E2723;
-    background-color: #fd9934 ;
-    border: 0.15rem solid  #c95d05;
-    box-shadow: 1px 1px  #fd9934 , 2px 2px #fd9934 ;
-      
-  }
+    color: #2E3440;
+    background-color: #eef1f5;
+    border: 0.2rem solid #E5E9F0;
+ }
   
   .blackOnWhite:hover{
-    color:  #3E2723;
-    background-color: #e47958;
-    border: 0.15rem solid #aa310c;
-    box-shadow: 1px 1px #e47958, 2px 2px #e47958;
-  }
+      color: #ECEFF4;
+      background-color: #6990c0;
+      border: 0.2rem solid #4C566A;
+   }
   
   .whiteOnBlue:active, .blackOnWhite:active, .whiteOnBlack:active{
       top:4px;
@@ -358,7 +272,12 @@ html {
       box-shadow:0 0 0 0;
   }
   
-  
+  .activeTouch{
+    top:4px;
+    left:4px;
+    cursor: pointer;
+    box-shadow:0 0 0 0;
+  }
   
   .whiteOnBlue::after, .blackOnWhite:after, .whiteOnBlack:after{
       content: "";
@@ -489,16 +408,17 @@ html {
       transition: transform 0.5s;
   }
   
+  
   a:hover{
       transform: scale(1.1);
   }
   
   .aTag{
-    color: #3E2723;
+    color:#353535;
   }
   .rotate{
       display: inline-block;
-      color:#3E2723;
+      color:#353535;
       vertical-align: middle;
       transition: transform 0.5s ease-in-out;
   }
@@ -525,7 +445,7 @@ html {
   #imgfoot:hover{
       transform: translate(0px, 6px) rotate(360deg) ;
   }
-  .calculatorImg{
+   .calculatorImg{
     height: 10rem;
     width: 8.5rem;
     margin-left: 2rem;
@@ -539,17 +459,17 @@ html {
    }
   
   .screenOff{
-      color:#FFF8DC;
-      stroke:#FFF8DC;
-      fill:#FFF8DC;
-      transition: all 0.3s ease;
+      color:#F7F7F7;
+      stroke:#F7F7F7;
+      fill:#F7F7F7;
+    transition: all 0.3s ease;
   }
   
   .on{
-      fill: #e2dcc4;
-      color: #e2dcc4;
-      stroke: #e2dcc4;
-      transition: all 0.3s ease;
+      fill: #dbdbdb;
+      color: #dbdbdb;
+      stroke: #dbdbdb;
+  transition: all 0.3s ease;
   }
   
   .becomeGridContainer{
@@ -560,19 +480,19 @@ html {
   
   
   .onGrid{
-      background-color:#e2dcc4;
-      transition: all 0.3s ease;
+      background-color:#dbdbdb;    transition: all 0.3s ease;
   }
   
   .activatedPixel{
-    background-color:#757265;
+    background-color:#7c7a7a;
   }
   
   .activeScreenText{
-      color:#646156;
-  }
+      color:#7c7a7a;
+}
   
   .activeCursor{
-    background-color:#504e44;
+    background-color:#504e4e;
   }
       
+  

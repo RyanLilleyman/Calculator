@@ -2,105 +2,9 @@
 /*general html*/
 html {
     background: linear-gradient(to bottom, #4F3C6B, #9B85BA);
-/* Create a positioning context for pseudo-elements */
+    height: 100%;
     }
   
-    body, html {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-    }
-  
-    #menu {
-      height: 100%;
-      position: fixed;
-      background-color: #331F42;
-      width: 300px;
-      transition: 1000ms all cubic-bezier(0.19, 1, 0.22, 1);
-      transform: translateX(-100%);
-      left: 60px;
-    }
-  
-    #menu.expanded {
-      transform: translateX(0%);
-      left: 0px;
-    }
-  
-    .menu-inner {
-      width: 100%;
-      height: 100%;
-      position: relative;
-    }
-  
-    #blob {
-      top: 0;
-      z-index: -1;
-      right: 60px;
-      transform: translateX(100%);
-      height: 100%;
-      position: absolute;
-    }
-  
-    #blob-path {
-      height: 100%;
-      fill:  #331F42;
-    }
-  
-    .hamburger {
-      right: 20px;
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      margin-top: -10px;	
-    }
-  
-    .hamburger .line {
-      width: 100%;
-      height: 4px;
-      background-color: #fff;
-      position: absolute;
-    }
-  
-    .hamburger .line:nth-child(2) {
-      top: 50%;
-      margin-top: -2px;
-    }
-  
-    .hamburger .line:nth-child(3) {
-      bottom: 0;
-    }
-  
-    h1 {
-      position: fixed;
-      right: 0;
-      margin: 0;
-    }
-  
-    ul {
-      padding: 0;
-      list-style: none;
-      width: 80%;
-      margin-left: 10%;
-      position: absolute;
-      top: 10px;
-    }
-  
-    ul li {
-      color: #fff;
-      font-family: sans-serif;
-      padding: 20px 0;
-    }
-  
-    h2 {
-      position: absolute;
-       left: 50%;
-      color: #fff;
-      margin: 0;
-      font-size: 16px;
-      font-family: sans-serif;
-      font-weight: 100;
-    }
   
   
     @keyframes fadeIn {
@@ -111,47 +15,34 @@ html {
   
   .calculatorFade{
       display: none;
-      /* margin: 7.5% auto 10% auto; */
       display: flex;
       align-items: center;
       width: 100%;
       height: 100%;
       flex-direction: column;
       flex-wrap: nowrap;
+      gap: 3rem;
   }
   .calculatorFade.fadeIn{
     animation-name: fadeIn;
     animation-duration: 0.5s;
     animation-fill-mode:forwards;
   }
-  /* 
-  --jet: #35302Cff;
-  --sky-blue: #93C3D6ff;
-  --coffee: #634730ff;
-  --french-gray: #CACDD1ff;
-  --verdigris: #86B2B5ff;
-  --platinum: #E0DFDDff;
-  --sunset: #EACCA6ff;
-  --chamoisee: #9F805Fff;
-  --timberwolf: #D8D4D5ff;
-  --buff: #DBB180ff; */
+
   
-  
-  /* --lion: #BE905Cff;
-  --battleship-gray: #958E87ff;
-  --coffee: #634730ff;
-  --sunset: #EACCA6ff;
-  --buff: #DBB180ff;
-  --columbia-blue: #C7E5FCff;
-  --timberwolf: #D8D4D5ff;
-  --sky-blue: #93C3D6ff;
-  --chamoisee: #9F805Fff;
-  --coyote: #85715Dff; */
+  .flexOn{
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: nowrap;
+    text-transform: capitalize;
+  }
   
   .calculator{
     padding-top: 0.5rem;
     padding-bottom: 0.4rem;
-    margin: 10rem auto 2rem auto;
+   
     width: 21rem;
     height: 28rem;
     max-width: 100%;
@@ -269,6 +160,12 @@ html {
   button{
     width: 3.8rem;
     height: 2.4rem;
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none;
     
   }
   
@@ -309,7 +206,6 @@ html {
       background-color: #4F3C6B;
       border: 0.15rem solid  #331F42;
       box-shadow: 1px 1px  #4F3C6B, 2px 2px  #4F3C6B, 3px 3px  #4F3C6B,4px 4px  #4F3C6B;
-      
   }
   
   .blackOnWhite{
@@ -317,34 +213,32 @@ html {
     background-color: #C6B3D3;
     border: 0.15rem solid #7B609F;
     box-shadow: 1px 1px #C6B3D3, 2px 2px #C6B3D3, 3px 3px #C6B3D3,4px 4px #C6B3D3;
-  }
+   }
   
   
-  .whiteOnBlue:hover, .blackOnWhite:hover, .whiteOnBlack:hover{
+  /* .whiteOnBlue:hover, .blackOnWhite:hover, .whiteOnBlack:hover{
       top:2px;
       left:2px;
       cursor: pointer;
-  }
+  } */
   
   .whiteOnBlue:hover{
     color: #FFFFFF;
     background-color:#9072b8  ;
     border: 0.2rem solid #4F3C6B;
-    box-shadow: 1px 1px #7B609F,2px 2px #7B609F;
   }
   
   .whiteOnBlack:hover{
     color: #FFFFFF;
     background-color: #6c5491;
     border: 0.2rem solid #331F42;
-    box-shadow: 1px 1px #4F3C6B,2px 2px #4F3C6B;
   }
   
   .blackOnWhite:hover{
     color: #FFFFFF;
-      background-color: #dfcbec;
-      border: 0.2rem solid #7B609F;
-      box-shadow: 1px 1px #C6B3D3,2px 2px #C6B3D3;
+    background-color: #dfcbec;
+    border: 0.2rem solid #7B609F;
+
   }
   
   .whiteOnBlue:active, .blackOnWhite:active, .whiteOnBlack:active{
@@ -357,7 +251,12 @@ html {
       box-shadow:0 0 0 0;
   }
   
-  
+  .activeTouch{
+    top:4px;
+    left:4px;
+    cursor: pointer;
+    box-shadow:0 0 0 0;
+  }
   
   .whiteOnBlue::after, .blackOnWhite:after, .whiteOnBlack:after{
       content: "";
@@ -488,16 +387,17 @@ html {
       transition: transform 0.5s;
   }
   
+  
   a:hover{
       transform: scale(1.1);
   }
   
   .aTag{
-    color: #d1d0d0;
+    color:#353535;
   }
   .rotate{
       display: inline-block;
-      color:#d1d0d0;
+      color:#353535;
       vertical-align: middle;
       transition: transform 0.5s ease-in-out;
   }
@@ -524,7 +424,7 @@ html {
   #imgfoot:hover{
       transform: translate(0px, 6px) rotate(360deg) ;
   }
-  .calculatorImg{
+   .calculatorImg{
     height: 10rem;
     width: 8.5rem;
     margin-left: 2rem;
@@ -537,18 +437,17 @@ html {
     transform: scale(1.1);
    }
   
-  
   .screenOff{
-      color:#E8E8E8;
-      stroke:#E8E8E8;
-      fill:#E8E8E8;
+    color:#E8E8E8;
+    stroke:#E8E8E8;
+    fill:#E8E8E8;
       transition: all 0.3s ease;
   }
   
   .on{
-      fill: #d3cece;
-      color: #d3cece;
-      stroke: #d3cece;
+    fill: #d3cece;
+    color: #d3cece;
+    stroke: #d3cece;
       transition: all 0.3s ease;
   }
   
@@ -560,7 +459,7 @@ html {
   
   
   .onGrid{
-      background-color:#d3cece;
+    background-color:#d3cece;
       transition: all 0.3s ease;
   }
   
@@ -569,10 +468,10 @@ html {
   }
   
   .activeScreenText{
-      color:#7c7a7a;
-  }
+    color:#7c7a7a;  }
   
   .activeCursor{
     background-color:#504e4e;
   }
       
+  
