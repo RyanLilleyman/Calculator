@@ -238,11 +238,10 @@ html {
   }
   
   
-  /* .whiteOnBlue:hover, .blackOnWhite:hover, .whiteOnBlack:hover{
-      top:2px;
-      left:2px;
+   .whiteOnBlue:hover, .blackOnWhite:hover, .whiteOnBlack:hover{
+
       cursor: pointer;
-  } */
+  } 
   
   .whiteOnBlue:hover{
     color: #5D4037  ;
@@ -265,7 +264,7 @@ html {
   .whiteOnBlue:active, .blackOnWhite:active, .whiteOnBlack:active{
       top:4px;
       left:4px;
-      cursor: pointer;
+      cursor: grab;
   }
   
   .blackOnWhite:active, .whiteOnBlack:active, .whiteOnBlue:active{

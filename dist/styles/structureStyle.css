@@ -334,11 +334,9 @@ button{
 }
 
 
-/* .whiteOnBlue:hover, .blackOnWhite:hover, .whiteOnBlack:hover{
-    top:2px;
-    left:2px;
+.whiteOnBlue:hover, .blackOnWhite:hover, .whiteOnBlack:hover{
     cursor: pointer;
-} */
+}
 
 .whiteOnBlue:hover{
   color: #FFFFFF;
