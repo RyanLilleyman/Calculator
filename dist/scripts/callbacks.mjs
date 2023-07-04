@@ -254,12 +254,13 @@ export function leftArrowClicked() {
 export function numberClickHandler(number) {
  return function (e) {
    if (CONSTANTS.FLAGLIST.isOn) {
-     CONSTANTS.EXPRESSION_OBJECT.push(String(number));
-     updateGrids(CONSTANTS.EXPRESSION_OBJECT.string);
-     moveCursor(0, CONSTANTS.EXPRESSION_OBJECT.getGridCountForToken(String(number)));
+        CONSTANTS.EXPRESSION_OBJECT.push(String(number));
+        updateGrids(CONSTANTS.EXPRESSION_OBJECT.string);
+        moveCursor(0, CONSTANTS.EXPRESSION_OBJECT.getGridCountForToken(String(number)));
+    }
    }
  }
-}
+
 
 export function expressionClickHandler(string) {
  return function (e) {
@@ -393,7 +394,7 @@ export function radClicked(){
    if(CONSTANTS.FLAGLIST.isOn){
        CONSTANTS.RADIAN_SCREEN.classList.add('activeScreenText');
        CONSTANTS.DEGREE_SCREEN.classList.remove('activeScreenText');
-       CONSTANTS.FLAGLIST.angleMode = true;
+       CONSTANTS.FLAGLIST.angleMode = false;
        console.log(CONSTANTS.FLAGLIST.angleMode);  
    }
 }
@@ -476,47 +477,199 @@ function displayResult(result) {
     }
 }
 
-// Modify enterClicked function to call displayResult with the result
-export function enterClicked() {
- return async function (e) {
-   let arr = CONSTANTS.EXPRESSION_OBJECT.string;
-   console.log(arr);
+// // Modify enterClicked function to call displayResult with the result
+// export function enterClicked() {
+//  return async function (e) {
+//    let arr = CONSTANTS.EXPRESSION_OBJECT.string;
+//    console.log(arr);
+//    if (arr[arr.length-1].includes('sin(','tan(','cos(')){
+//     console.log('contains trig.')
+//    }
 
-   let dictionaryOfArrayElementsToChange = {
-     p: '(pi)',
-     "E": "*10^",
-      "!" : "^-1",
-      "S" : "-",
-      "@" : "^2",
-      "xRt":"nthRoot(",
-      "(tn" : "(10^",
-   }
+//    let dictionaryOfArrayElementsToChange = {
+//      p: '(pi)',
+//      "E": "*10^",
+//       "!" : "^-1",
+//       "S" : "-",
+//       "@" : "^2",
+//       "xRt":"nthRoot(",
+//       "(tn" : "(10^",
+//    }
 
-   var newArr = arr.map(item => {
-     let newItem = item;
-     for (let key in dictionaryOfArrayElementsToChange) {
-       if (newItem.includes(key)) {
-         newItem = newItem.replace(new RegExp(escapeRegExp(key), 'g'), dictionaryOfArrayElementsToChange[key]);
-       }
-     }
-     return newItem;
-   });
+//    var newArr = arr.map(item => {
+//      let newItem = item;
+//      for (let key in dictionaryOfArrayElementsToChange) {
+//        if (newItem.includes(key)) {
+//          newItem = newItem.replace(new RegExp(escapeRegExp(key), 'g'), dictionaryOfArrayElementsToChange[key]);
+//        }
+//      }
+//      return newItem;
+//    });
 
-   console.log(newArr);
-   var arrToString = newArr.join('');
+//    //If CONSTANTS.FLAGLIST.anglemode is true, Include check of array tokens that fall after an item that 
+//    // includes sin(, tan(, cos(
+//    // convert this token which if a number to
+   
 
-   // Dynamically import mathjs
-   // Dynamically import mathjs
-  const math = await import('./custom-math.js');
+//    console.log(newArr);
+//    var arrToString = newArr.join('');
 
-  var result = math.default.evaluate(arrToString);
+//    // Dynamically import mathjs
+//    // Dynamically import mathjs
+//   const math = await import('./custom-math.js');
 
-   console.log(result);
+//   var result = math.default.evaluate(arrToString);
 
-   displayResult(result);
- }
+//    console.log(result);
+
+//    displayResult(result);
+//  }
+// }
+
+
+// const trigFunctions = ['sin(', 'cos(', 'tan(', 'asin(', 'acos(', 'atan('];
+
+// export function enterClicked() {
+//   return async function (e) {
+//     let arr = CONSTANTS.EXPRESSION_OBJECT.string;
+//     console.log(arr);
+
+//     let dictionaryOfArrayElementsToChange = {
+//       p: '(pi)',
+//       "E": "*10^",
+//       "!": "^-1",
+//       "S": "-",
+//       "@": "^2",
+//       "xRt":"nthRoot(",
+//       "(tn" : "(10^",
+//     }
+
+//     let newArr = arr.map(item => {
+//       let newItem = item;
+//       for (let key in dictionaryOfArrayElementsToChange) {
+//         if (newItem.includes(key)) {
+//           newItem = newItem.replace(new RegExp(escapeRegExp(key), 'g'), dictionaryOfArrayElementsToChange[key]);
+//         }
+//       }
+
+//       // If the angle mode is true, check if it's a trigonometric function and convert the degree to radian
+//       if (CONSTANTS.FLAGLIST.angleMode === true) {
+//         for (let func of trigFunctions) {
+//           if (newItem.includes(func)) {
+//             let degreeIndex = newItem.indexOf(func) + func.length - 1;
+//             let degreeEnd = newItem.indexOf(')', degreeIndex);
+//             if (degreeEnd !== -1) {
+//               let degreeValue = parseFloat(newItem.substring(degreeIndex, degreeEnd));
+//               if (!isNaN(degreeValue)) {
+//                 let radianValue = math.unit(degreeValue, 'deg').toNumber('rad');
+//                 newItem = newItem.substring(0, degreeIndex) + radianValue + newItem.substring(degreeEnd);
+//               }
+//             }
+//           }
+//         }
+//       }
+
+//       return newItem;
+//     });
+
+//     console.log(newArr);
+
+//     var arrToString = newArr.join('');
+
+//     // Dynamically import mathjs
+//     const math = await import('./custom-math.js');
+
+//     var result = math.default.evaluate(arrToString);
+
+//     console.log(result);
+
+//     displayResult(result);
+//   }
+// }
+
+const trigFunctions = ['sin(', 'cos(', 'tan(', 'asin(', 'acos(', 'atan('];
+
+function convertToRadians(token, math) {
+  let degreeValue = parseFloat(token);
+  if (!isNaN(degreeValue)) {
+    return String(degreeValue * math.pi / 180);  // convert degrees to radians
+  }
+  return token;
+}
+function adjustTrigFunction(tokens, index, math) {
+  let token = tokens[index];
+  if (trigFunctions.some(func => token.includes(func))) {
+    if (index < tokens.length - 1) {
+      tokens[index + 1] = convertToRadians(tokens[index + 1], math);
+    } else {
+      throw new Error('Trigonometric function at end of expression without argument');
+    }
+  } else if (token.includes('(') && token.includes(')')) { 
+    let openingBraceIndex = token.indexOf('(');
+    let closingBraceIndex = token.lastIndexOf(')');
+    if (openingBraceIndex !== -1 && closingBraceIndex !== -1) {
+      let innerTokens = token.slice(openingBraceIndex + 1, closingBraceIndex).split(' ');
+      tokens[index] = token.slice(0, openingBraceIndex + 1) +
+        adjustTrigFunctions(innerTokens, math).join(' ') +
+        token.slice(closingBraceIndex);
+    }
+  }
+  return tokens;
+}
+function adjustTrigFunctions(tokens, math) {
+  for (let index = 0; index < tokens.length; index++) {
+    tokens = adjustTrigFunction(tokens, index, math);
+  }
+  return tokens;
 }
 
+export function enterClicked() {
+  return async function (e) {
+    let arr = CONSTANTS.EXPRESSION_OBJECT.string;
+    console.log(arr);
+
+    let dictionaryOfArrayElementsToChange = {
+      p: '(pi)',
+      "E": "*10^",
+      "!": "^-1",
+      "S": "-",
+      "@": "^2",
+      "xRt":"nthRoot(",
+      "(tn" : "(10^",
+    }
+
+    var newArr = arr.map(item => {
+      let newItem = item;
+      for (let key in dictionaryOfArrayElementsToChange) {
+        if (newItem.includes(key)) {
+          newItem = newItem.replace(new RegExp(escapeRegExp(key), 'g'), dictionaryOfArrayElementsToChange[key]);
+        }
+      }
+      return newItem;
+    });
+
+    // Dynamically import mathjs
+    const math = (await import('./custom-math.js')).default;
+
+    // If the angle mode is true, adjust all trigonometric functions to take arguments in radians
+    if (CONSTANTS.FLAGLIST.angleMode === true) {
+      newArr = adjustTrigFunctions(newArr, math);
+    }
+
+    console.log(newArr);
+
+    var arrToString = newArr.join('');
+
+    var result = math.evaluate(arrToString);
+
+    console.log(result);
+
+    displayResult(result);
+  }
+}
+
+
+// Other helper functions...
 
 
 
