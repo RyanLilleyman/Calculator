@@ -1023,16 +1023,16 @@
 
         if(mobileCheck){
             $(document).ready(function(){
-            $("button").on('touchstart', function(){
-                $(this).addClass('activeTouch');
-            });
-            
-            $("button").on('touchend', function(){
-                $(this).removeClass('activeTouch');
-            });
-            $("button").on('touchmove', function(){
-                $(this).removeClass('activeTouch');
-            });
+                $("button").on('touchstart', function(){
+                    $(this).addClass('activeTouch');
+                });
+                
+                $("button").on('touchend', function(){
+                    $(this).removeClass('activeTouch');
+                });
+                $("button").on('touchmove', function(){
+                    $(this).removeClass('activeTouch');
+                });
             });
         }else{
             const buttons = document.querySelectorAll('button');

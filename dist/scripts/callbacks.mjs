@@ -373,7 +373,6 @@ function toggleGridClass(changeTo){
 * @param {*} e
 */
 export function offClicked(e){
-   CONSTANTS.TON.remove();
    CONSTANTS.ON.classList.remove('activatedBLUEOW');
    CONSTANTS.SCREEN_OFF.forEach(x=>x.classList.remove('on'));
    CONSTANTS.FLIP_ZERO.forEach(btn => btn.classList.remove('flipF'));
