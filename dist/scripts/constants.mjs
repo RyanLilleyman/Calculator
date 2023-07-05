@@ -77,6 +77,10 @@ export var DISPLAY_WHAT_SINGLE = {
     'r' : [12,13,16,19,21,26,31],
     'e' : [11,12,13,15,19,20,21,22,23,25,31,32],
     'o' : [11,12,13,15,19,20,24,25,29,31,32,33],
+    's' : [11,12,13,15,21,22,23,29,30,31,32,33],
+    'i' : [2,11,12,17,22,27,31,32,33],
+    'n' : [10,12,13,15,16,19,20,24,25,29,30,34]
+    
 
 
 };
@@ -329,7 +333,7 @@ export const RADIAN_SCREEN = document.querySelector('#radianScreenText');
 
 export const FORWARD = document.querySelector('#forwardSlash');
 
-export var TON = document.querySelector('.TURNON');
+
 
 export /** @type {*} Object that defines the flags for state management.*/
 const FLAGLIST = {

@@ -59,59 +59,63 @@ let isCursorMoving = false;
 let updateTimeout;
 
 function moveCursor(delta, newCursorPosition) {
- if (isCursorMoving) {
-   // If the cursor is already moving, exit the function to prevent overlapping movements
-   return;
- }
-
- isCursorMoving = true;
-
- // Clear current interval and cursor style
- let currentGridSpace = document.getElementById(`gridspace${String(cursorPosition + 1).padStart(2, '0')}`);
- if (currentGridSpace) {
-   let children = Array.from(currentGridSpace.children);
-   children.forEach(child => {
-     child.classList.remove('activeCursor');
-   });
- }
- clearInterval(cursorInterval);
-
- // Check bounds and scroll if necessary
- while (newCursorPosition >= 11) {
-   newCursorPosition--;
-   if (scrollOffset + newCursorPosition < CONSTANTS.EXPRESSION_OBJECT.getCharacterLength()) {
-     scrollOffset++;
-   }
- }
- while (newCursorPosition < 0 && scrollOffset > 0) {
-   newCursorPosition++;
-   scrollOffset--;
- }
-
- // Ensure the new cursor position is within bounds
- newCursorPosition = Math.max(0, newCursorPosition);
- newCursorPosition = Math.min(CONSTANTS.EXPRESSION_OBJECT.getCharacterLength(), newCursorPosition);
-
- // Update cursorPosition
- cursorPosition = newCursorPosition;
-
- // Clear the update timeout to prevent delayed grid updates
- clearTimeout(updateTimeout);
-
- if (CONSTANTS.FLAGLIST.isOn) {
-   // Draw cursor at new position immediately
-   drawCursor();
-
-   // Delay the grid update to prevent freezing the cursor
-   updateTimeout = setTimeout(() => {
-     updateGrids(CONSTANTS.EXPRESSION_OBJECT.string);
-     isCursorMoving = false;
-   }, 10);
- } else {
-   // Cursor is toggled off, clear it immediately
-   clearCursor();
-   isCursorMoving = false;
- }
+  console.log("Starting moveCursor function.");
+  
+  if (isCursorMoving) {
+    console.log("Cursor is already moving. Exiting function.");
+    return;
+  }
+  
+  isCursorMoving = true;
+  
+  let currentGridSpace = document.getElementById(
+    `gridspace${String(cursorPosition + 1).padStart(2, '0')}`
+  );
+  
+  if (currentGridSpace) {
+    let children = Array.from(currentGridSpace.children);
+    
+    children.forEach(child => {
+      child.classList.remove('activeCursor');
+    });
+  }
+  
+  clearInterval(cursorInterval);
+  
+  while (newCursorPosition >= 11) {
+    newCursorPosition--;
+    
+    if (scrollOffset + newCursorPosition < CONSTANTS.EXPRESSION_OBJECT.getCharacterLength()) {
+      scrollOffset++;
+    }
+  }
+  
+  while (newCursorPosition < 0 && scrollOffset > 0) {
+    newCursorPosition++;
+    scrollOffset--;
+  }
+  
+  newCursorPosition = Math.max(0, newCursorPosition);
+  newCursorPosition = Math.min(CONSTANTS.EXPRESSION_OBJECT.getCharacterLength(), newCursorPosition);
+  
+  cursorPosition = newCursorPosition;
+  
+  clearTimeout(updateTimeout);
+  
+  if (CONSTANTS.FLAGLIST.isOn) {
+    console.log("Drawing cursor at new position.");
+    drawCursor();
+    
+    updateTimeout = setTimeout(() => {
+      console.log("Updating grids after timeout.");
+      updateGrids(CONSTANTS.EXPRESSION_OBJECT.string);
+      isCursorMoving = false;
+    }, 10);
+  } else {
+    console.log("Cursor is toggled off. Clearing it immediately.");
+    clearCursor();
+    isCursorMoving = false;
+  }
 }
 
 function updateGrids(expressionArray) {
@@ -286,9 +290,20 @@ export function numberClickHandler(number) {
 export function expressionClickHandler(string) {
  return function (e) {
    if (CONSTANTS.FLAGLIST.isOn) {
-     CONSTANTS.EXPRESSION_OBJECT.push(string);
-     updateGrids(CONSTANTS.EXPRESSION_OBJECT.string);
-     moveCursor(0, CONSTANTS.EXPRESSION_OBJECT.getGridCountForToken(string));
+     if(string === 'sin('){
+       let array = string;
+       for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        console.log(element);
+        CONSTANTS.EXPRESSION_OBJECT.push(element);
+       }
+       updateGrids(CONSTANTS.EXPRESSION_OBJECT.string);
+       moveCursor(0, CONSTANTS.EXPRESSION_OBJECT.getGridCountForToken(string));
+     }else{
+      CONSTANTS.EXPRESSION_OBJECT.push(string);
+      updateGrids(CONSTANTS.EXPRESSION_OBJECT.string);
+      moveCursor(0, CONSTANTS.EXPRESSION_OBJECT.getGridCountForToken(string));
+     }
    }
  }
 }
