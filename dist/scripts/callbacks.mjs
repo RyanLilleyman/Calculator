@@ -232,13 +232,9 @@ CONSTANTS.CLEAR.addEventListener('mousedown', clearResetTimeout);
 CONSTANTS.WOFF.addEventListener('mousedown', clearResetTimeout);
 
 
-/**
-* A function that handles the right arrow click event.
-*
-* @return {undefined} This function does not return a value.
-*/
 export function rightArrowClicked() {
- moveCursor(1);
+  console.log("Right arrow clicked - cursor position:", cursorPosition);
+  moveCursor(1, cursorPosition + 1);
 }
 
 /**
@@ -248,9 +244,34 @@ export function rightArrowClicked() {
 * @return {void}
 */
 export function leftArrowClicked() {
- moveCursor(-1);
+  console.log("Left arrow clicked - cursor position:", cursorPosition);
+  moveCursor(-1, cursorPosition - 1);
 }
 
+
+/**
+* Deletes the token at the current cursor position.
+*
+* @return {void}
+*/
+export function deleteToken() {
+  // Check if there's a token to delete at the current cursor position
+  if (cursorPosition < 0 || cursorPosition >= CONSTANTS.EXPRESSION_OBJECT.string.length) {
+    return;
+  }
+
+  // Remove the token from the expression array
+  CONSTANTS.EXPRESSION_OBJECT.string.splice(cursorPosition, 1);
+
+  // Move the cursor back by one position, but don't let it go negative
+  cursorPosition = Math.max(0, cursorPosition - 1);
+
+  // Update the grids
+  updateGrids(CONSTANTS.EXPRESSION_OBJECT.string);
+
+  // Move the cursor to reflect the deletion
+  moveCursor(0, cursorPosition);
+}
 export function numberClickHandler(number) {
  return function (e) {
    if (CONSTANTS.FLAGLIST.isOn) {

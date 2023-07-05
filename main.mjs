@@ -65,7 +65,8 @@ const buttonHandlers = {
     'DEGREE' : CALLBACKS.degClicked,
     'RADIAN' : CALLBACKS.radClicked,
     'RIGHTARROW' : CALLBACKS.rightArrowClicked,
-    'LEFTARROW' : CALLBACKS.leftArrowClicked
+    'LEFTARROW' : CALLBACKS.leftArrowClicked,
+    'DELETE' : CALLBACKS.deleteToken,
 
 };
 
