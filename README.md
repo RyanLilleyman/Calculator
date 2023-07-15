@@ -4,6 +4,8 @@
 
 The Scientific Calculator is an advanced computation tool designed with HTML, CSS, and JavaScript. Whether it's complex calculations or basic arithmetic, this calculator offers precision and convenience at your fingertips.
 
+![Project Banner](https://github.com/RyanLilleyman/Calculator/blob/main/Screencast-from-07-15-2023-05_48_41-PM.gif)
+
 ## How to Use
 
 1. Clone the repository or download the zip file.
