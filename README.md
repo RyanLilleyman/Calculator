@@ -17,6 +17,8 @@ The Scientific Calculator is an advanced computation tool designed with HTML, CS
 
 - For single expression tokens, the scroll can become frozen and requires a page refresh.
 - The delete and insert buttons need implementation for multicharacter tokens.
+- The arrows on the top display aren't implemented.
+
 
 ## Contribute
 
