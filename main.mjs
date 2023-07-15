@@ -66,7 +66,7 @@ const buttonHandlers = {
     'RADIAN' : CALLBACKS.radClicked,
     'RIGHTARROW' : CALLBACKS.rightArrowClicked,
     'LEFTARROW' : CALLBACKS.leftArrowClicked,
-    'DELETE' : CALLBACKS.deleteToken,
+    // 'DELETE' : CALLBACKS.deleteToken,
 
 };
 

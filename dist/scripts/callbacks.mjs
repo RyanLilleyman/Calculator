@@ -21,9 +21,7 @@ export function seconded(e){
        CONSTANTS.SECOND_SCREEN.classList.toggle('activeScreenText');
    }
 }
-let cursorPosition = 0;
-let cursorInterval;
-let scrollOffset = 0;
+
 
 /**
 * Draws the cursor on the screen.
@@ -57,7 +55,9 @@ function drawCursor() {
 
 let isCursorMoving = false;
 let updateTimeout;
-
+let cursorPosition = 0;
+let cursorInterval;
+let scrollOffset = 0;
 function moveCursor(delta, newCursorPosition) {
   console.log("Starting moveCursor function.");
   
@@ -120,71 +120,52 @@ function moveCursor(delta, newCursorPosition) {
 
 function updateGrids(expressionArray) {
   console.log(`Updating grids with expression array ${expressionArray}`);
- 
-  const flatArray = expressionArray.flatMap((token) => {
+
+  const flatArray = expressionArray.map((token) => {
     console.log(`Processing token: ${token}`);
-    if (CONSTANTS.MULTIPLE[token]) {
-      return Object.keys(CONSTANTS.MULTIPLE[token]).map((key) => {
-        console.log(`Processing key: ${key}`);
-        return {
-          token: token,
-          key: key,
-        };
-      });
-    } else {
-      console.log(`No multiple for token: ${token}`);
-      return { token: token, key: token };
-    }
+    return {
+      token: token,
+      key: token,
+    };
   });
- 
+
   // Only select the elements that should be displayed, based on scrollOffset
-  const displayedElements = flatArray.slice(scrollOffset, scrollOffset + 11);
- 
+  const displayedElements = flatArray.slice(scrollOffset, scrollOffset + 10);
+
   displayedElements.forEach((item, index) => {
     console.log(`Processing item at index ${index}:`, item);
-    const displayDataObject =
-      CONSTANTS.MULTIPLE[item.token] ? CONSTANTS.MULTIPLE : CONSTANTS.DISPLAY_WHAT_SINGLE;
- 
-    populateGrids(item.token, item.key, index + 1, displayDataObject);
+    populateGrids(item.token, item.key, index + 1, CONSTANTS.DISPLAY_WHAT_SINGLE);
   });
- 
+
   console.log("Drawing cursor...");
   drawCursor(); // Add this line to draw the cursor after updating the grids
- }
- 
+}
 
 function populateGrids(token, key, containerID, displayDataObject) {
- const container = document.getElementById(`gridspace${containerID.toString().padStart(2, '0')}`);
+  const container = document.getElementById(`gridspace${containerID.toString().padStart(2, '0')}`);
 
- if (!container) {
-   console.error(`No container found with ID gridspace${containerID}`);
-   return;
- }
+  if (!container) {
+    console.error(`No container found with ID gridspace${containerID}`);
+    return;
+  }
 
- const children = Array.from(container.children);
- children.forEach(child => child.classList.remove('activatedPixel'));
+  const children = Array.from(container.children);
+  children.forEach(child => child.classList.remove('activatedPixel'));
 
- const displayData = displayDataObject[token];
+  const displayData = displayDataObject[token];
 
- if (!displayData) {
-   console.error(`No display data found for token '${token}'`);
-   return;
- }
+  if (!displayData) {
+    console.error(`No display data found for token '${token}'`);
+    return;
+  }
 
- const indices = Array.isArray(displayData[key]) ? displayData[key] : displayData;
-
- if (!Array.isArray(indices)) {
-   console.error(`No array of indices found for token '${token}', key '${key}'`);
-   return;
- }
-
- indices.forEach(index => {
-   if (index < children.length) {
-     children[index].classList.add('activatedPixel');
-     console.log(`Added 'activatedPixel' to child at index ${index}`);
-   }
- });
+  displayData.forEach(index => {
+    if (index < children.length) {
+      children[index].classList.add('activatedPixel');
+    }
+  });
 }
+
 let isClearing = false;
 let resetTimeout;
 
@@ -253,29 +234,7 @@ export function leftArrowClicked() {
 }
 
 
-/**
-* Deletes the token at the current cursor position.
-*
-* @return {void}
-*/
-export function deleteToken() {
-  // Check if there's a token to delete at the current cursor position
-  if (cursorPosition < 0 || cursorPosition >= CONSTANTS.EXPRESSION_OBJECT.string.length) {
-    return;
-  }
 
-  // Remove the token from the expression array
-  CONSTANTS.EXPRESSION_OBJECT.string.splice(cursorPosition, 1);
-
-  // Move the cursor back by one position, but don't let it go negative
-  cursorPosition = Math.max(0, cursorPosition - 1);
-
-  // Update the grids
-  updateGrids(CONSTANTS.EXPRESSION_OBJECT.string);
-
-  // Move the cursor to reflect the deletion
-  moveCursor(0, cursorPosition);
-}
 export function numberClickHandler(number) {
  return function (e) {
    if (CONSTANTS.FLAGLIST.isOn) {
@@ -287,27 +246,32 @@ export function numberClickHandler(number) {
  }
 
 
-export function expressionClickHandler(string) {
- return function (e) {
-   if (CONSTANTS.FLAGLIST.isOn) {
-     if(string === 'sin('){
-       let array = string;
-       for (let index = 0; index < array.length; index++) {
-        const element = array[index];
-        console.log(element);
-        CONSTANTS.EXPRESSION_OBJECT.push(element);
-       }
+ export function expressionClickHandler(string) {
+  return function (e) {
+    if (CONSTANTS.FLAGLIST.isOn) {
+      let checkArray = [
+       'sin(','cos(','asin(','acos(','tan(',
+       'atan(','xRt','2x','log(','(tn',
+       'e^(','ln('
+     ];
+     let isMatch = checkArray.some(function(v) { return string.indexOf(v) >= 0; });
+     if(isMatch){
+        for (let index = 0; index < string.length; index++) {
+         const element = string[index];
+         console.log(element);
+         CONSTANTS.EXPRESSION_OBJECT.push(element);
+        }
+        updateGrids(CONSTANTS.EXPRESSION_OBJECT.string);
+        moveCursor(0, CONSTANTS.EXPRESSION_OBJECT.getGridCountForToken(string));
+      } else {
+       CONSTANTS.EXPRESSION_OBJECT.push(string);
        updateGrids(CONSTANTS.EXPRESSION_OBJECT.string);
        moveCursor(0, CONSTANTS.EXPRESSION_OBJECT.getGridCountForToken(string));
-     }else{
-      CONSTANTS.EXPRESSION_OBJECT.push(string);
-      updateGrids(CONSTANTS.EXPRESSION_OBJECT.string);
-      moveCursor(0, CONSTANTS.EXPRESSION_OBJECT.getGridCountForToken(string));
-     }
-   }
+      }
+    }
+  }
  }
-}
-
+ 
 /**
 * Resets the expression and performs additional actions if a flag is on.
 *
