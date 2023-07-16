@@ -8,7 +8,7 @@ The Scientific Calculator is an advanced computation tool designed with HTML, CS
 
 ## How to Use
 
-1. Clone the repository or download the zip file.
+1. Clone the repository.
 2. Open the `index.html` file in your browser.
 3. Utilize the user-friendly interface to input your calculations.
 4. (Hint: You might want to try dividing by zero for a little surprise!)
