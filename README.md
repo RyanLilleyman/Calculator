@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Scientific Calculator is an advanced computation tool designed with HTML, CSS, and JavaScript. Whether it's complex calculations or basic arithmetic, this calculator offers precision and convenience at your fingertips.
+This Scientific Calculator is a recreation of a classic texas instruments Ti-30. 
 
 ![Project Banner](https://github.com/RyanLilleyman/Calculator/blob/main/Screencast-from-07-15-2023-05_48_41-PM.gif)
 
