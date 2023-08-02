@@ -2,7 +2,7 @@
 
 ## Overview
 
-This Scientific Calculator is a recreation of a classic texas instruments Ti-30. 
+This Scientific Calculator is a recreation of a classic Texas Instruments Ti-30. 
 
 ![Project Banner](https://github.com/RyanLilleyman/Calculator/blob/main/Screencast-from-07-15-2023-05_48_41-PM.gif)
 
