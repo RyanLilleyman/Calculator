@@ -8,7 +8,7 @@ This Scientific Calculator is a recreation of a classic Texas Instruments Ti-30.
 
 ## How to Use
 
-1. CLick the live link or clone the repository.
+1. Click the live link or clone the repository.
 2. Open the `index.html` file in your browser (You may need to install a live server depending on your browser).
 3. Utilize the user-friendly interface to input your calculations.
 4. (Hint: You might want to try dividing by zero for a little surprise!)
